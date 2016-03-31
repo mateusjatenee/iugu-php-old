@@ -19,4 +19,10 @@ class Customer extends Request
         return $req;
     }
 
+    public function fetch($id)
+    {
+        $req = $this->getRequest('customers/' . $id, $this->apiKey);
+        return $req;
+    }
+
 }
