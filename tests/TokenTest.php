@@ -1,5 +1,7 @@
 <?php
 
+use Iugu\Iugu;
+
 class TokenTest extends PHPUnit_Framework_TestCase
 {
     public function test_token_can_be_created()
