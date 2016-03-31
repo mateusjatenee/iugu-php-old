@@ -1,5 +1,7 @@
 <?php
 
+use Iugu\Iugu;
+
 class ChargeTest extends PHPUnit_Framework_TestCase
 {
     public function test_someone_can_be_charged()
