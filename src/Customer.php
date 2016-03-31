@@ -6,31 +6,53 @@ use Iugu\Util\Request;
 
 class Customer extends Request
 {
+    /**
+     * @var string
+     */
     private $apiKey;
 
+    /**
+     * @param $apiKey
+     */
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
     }
 
+    /**
+     * @param array $data
+     * @return stdClass
+     */
     public function create(array $data)
     {
         $req = $this->postRequest('customers', $data, $this->apiKey);
         return $req;
     }
 
+    /**
+     * @param $id
+     * @return stdClass
+     */
     public function fetch($id)
     {
         $req = $this->getRequest('customers/' . $id, $this->apiKey);
         return $req;
     }
 
+    /**
+     * @param $id
+     * @return void
+     */
     public function delete($id)
     {
         $req = $this->deleteRequest('customers/' . $id, $this->apiKey);
         return $req;
     }
 
+    /**
+     * @param $options
+     * @return array
+     */
     public function all($options = null)
     {
         $req = $this->getRequest('customers', $this->apiKey, $options);
