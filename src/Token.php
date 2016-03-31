@@ -7,11 +7,18 @@ use Iugu\Util\Request;
 class Token extends Request
 {
 
+    /**
+     * @param $apiKey
+     */
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
     }
 
+    /**
+     * @param array $data
+     * @return stdClass
+     */
     public function create(array $data)
     {
         // $req = $this->postRequest('payment_token', $data);
