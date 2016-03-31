@@ -13,4 +13,10 @@ class Customer extends Request
         $this->apiKey = $apiKey;
     }
 
+    public function create(array $data)
+    {
+        $req = $this->postRequest('customers', $data, $this->apiKey);
+        return $req;
+    }
+
 }
