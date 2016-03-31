@@ -39,7 +39,7 @@ class Customer extends Request
 
     public function payment()
     {
-        return new PaymentMethod();
+        return new PaymentMethod($this->apiKey);
     }
 
 }
