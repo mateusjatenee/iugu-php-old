@@ -31,4 +31,10 @@ class Customer extends Request
         return $req;
     }
 
+    public function all($options = null)
+    {
+        $req = $this->getRequest('customers', $options);
+        return $req;
+    }
+
 }
