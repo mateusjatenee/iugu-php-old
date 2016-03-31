@@ -37,4 +37,9 @@ class Customer extends Request
         return $req;
     }
 
+    public function payment()
+    {
+        return new PaymentMethod();
+    }
+
 }
