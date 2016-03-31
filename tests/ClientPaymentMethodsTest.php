@@ -38,4 +38,33 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($payment_method->description, 'Primeiro Cartão');
         $this->assertEquals($payment_method->item_type, 'credit_card');
     }
+
+    public function test_customer_payment_method_can_be_fetched()
+    {
+        $email = 'email@email.com';
+        $name = 'Joao';
+
+        $client = $this->iugu->customer()->create([
+            'email' => $email,
+            'name' => $name,
+            'notes' => 'nenhuma',
+        ]);
+
+        $payment_method = $this->iugu->customer()->payment()->create($client->id, [
+            "description" => "Primeiro Cartão",
+            "item_type" => "credit_card",
+            "data" => [
+                "number" => "4111111111111111",
+                "verification_value" => "123",
+                "first_name" => "Nome",
+                "last_name" => "Sobrenome",
+                "month" => "12",
+                "year" => "2014",
+            ],
+        ]);
+
+        $fetched_payment_method = $this->iugu->customer()->payment()->fetch($client->id, $payment_method->id);
+
+        $this->assertEquals($payment_method->description, $fetched_payment_method->description);
+    }
 }
