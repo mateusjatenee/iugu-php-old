@@ -51,6 +51,6 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
         $deletedClient = $this->iugu->customer()->delete($client->id);
 
-        $this->assertEquals($deletedClient->id, $client->id);
+        $this->assertEquals('{}', $deletedClient);
     }
 }
