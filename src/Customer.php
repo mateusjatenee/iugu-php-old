@@ -25,4 +25,10 @@ class Customer extends Request
         return $req;
     }
 
+    public function delete($id)
+    {
+        $req = $this->deleteRequest('customers/' . $id, $this->apiKey);
+        return $req;
+    }
+
 }
