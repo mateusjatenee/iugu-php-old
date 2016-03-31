@@ -15,6 +15,7 @@ class PaymentMethod extends Request
 
     public function create($id, array $data)
     {
-        $this->postRequest('customers/' . $id . '/payment_methods', $data, $this->apiKey);
+        $req = $this->postRequest('customers/' . $id . '/payment_methods', $data, $this->apiKey);
+        return $req;
     }
 }
