@@ -26,16 +26,12 @@ class ChargeTest extends PHPUnit_Framework_TestCase
         ]);
 
         $charge = $iugu->charge()->create([
-            [
-                "token" => $token->id,
-                "email" => "teste@superteste.abc",
-                "items" => [
-                    [
-                        "description" => "Item Teste",
-                        "quantity" => "1",
-                        "price_cents" => "1000",
-                    ],
-                ],
+            "token" => $token->id,
+            "email" => "teste@superteste.abc",
+            "items" => [
+                "description" => "Item Teste",
+                "quantity" => "1",
+                "price_cents" => "1000",
             ],
         ]);
 
