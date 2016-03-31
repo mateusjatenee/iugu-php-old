@@ -40,4 +40,17 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($foundCustomer->email, $client->email);
         $this->assertEquals($foundCustomer->name, $client->name);
     }
+
+    public function test_client_can_be_deleted()
+    {
+        $client = $this->iugu->customer()->create([
+            'email' => 'john@doe.com',
+            'name' => 'John Doe',
+            'notes' => 'None',
+        ]);
+
+        $deletedClient = $this->iugu->customer()->delete($client->id);
+
+        $this->assertEquals($deletedClient->id, $client->id);
+    }
 }
