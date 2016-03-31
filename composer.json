@@ -13,5 +13,10 @@
             "name": "Mateus Guimarães",
             "email": "mateus@mguimaraes.co"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Iugu\\": "src/"
+        }
+    }
 }
