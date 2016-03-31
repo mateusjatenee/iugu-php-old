@@ -20,4 +20,9 @@ class Iugu
     {
         return new Charge($this->apiKey);
     }
+
+    public function customer()
+    {
+        return new Customer($this->apiKey);
+    }
 }
