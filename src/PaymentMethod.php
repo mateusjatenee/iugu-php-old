@@ -18,4 +18,11 @@ class PaymentMethod extends Request
         $req = $this->postRequest('customers/' . $id . '/payment_methods', $data, $this->apiKey);
         return $req;
     }
+
+    public function fetch($userId, $paymentId)
+    {
+        $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
+        $req = $this->getRequest($url, $this->apiKey);
+        return $req;
+    }
 }
