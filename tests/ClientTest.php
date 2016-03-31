@@ -56,7 +56,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
     public function test_clients_can_be_listed()
     {
-        $clients = $this->iugu()->customer()->all();
+        $clients = $this->iugu->customer()->all();
 
         $this->assertNotNull($clients);
         $this->assertFalse($clients->errors !== 0);
