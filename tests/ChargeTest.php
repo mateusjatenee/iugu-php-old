@@ -4,6 +4,13 @@ use Iugu\Iugu;
 
 class ChargeTest extends PHPUnit_Framework_TestCase
 {
+    protected function setUp()
+    {
+        $this->markTestSkipped(
+            'Já foi testado'
+        );
+    }
+
     public function test_someone_can_be_charged()
     {
         $api_key = getenv("IUGU_API_KEY");
