@@ -37,7 +37,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
         $foundCustomer = $this->iugu->customer()->fetch($client->id);
 
-        $this->assertEquals($foundCustomer->email, $client['email']);
-        $this->assertEquals($foundCustomer->name, $client['name']);
+        $this->assertEquals($foundCustomer->email, $client->email);
+        $this->assertEquals($foundCustomer->name, $client->name);
     }
 }
