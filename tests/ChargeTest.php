@@ -31,7 +31,7 @@ class ChargeTest extends PHPUnit_Framework_TestCase
             "items" => [
                 "description" => "Item Teste",
                 "quantity" => "1",
-                "price_cents" => "1000",
+                "price_cents" => "100",
             ],
         ]);
 
