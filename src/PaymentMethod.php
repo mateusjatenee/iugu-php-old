@@ -6,19 +6,35 @@ use Iugu\Util\Request;
 
 class PaymentMethod extends Request
 {
+    /**
+     * @var string
+     */
     private $apiKey;
 
+    /**
+     * @param $apiKey
+     */
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
     }
 
+    /**
+     * @param $id
+     * @param array $data
+     * @return stdClass
+     */
     public function create($id, array $data)
     {
         $req = $this->postRequest('customers/' . $id . '/payment_methods', $data, $this->apiKey);
         return $req;
     }
 
+    /**
+     * @param $userId
+     * @param $paymentId
+     * @return stdClass
+     */
     public function fetch($userId, $paymentId)
     {
         $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
