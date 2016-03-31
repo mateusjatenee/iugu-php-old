@@ -31,4 +31,15 @@ class Request
         return json_decode($request->getBody());
 
     }
+
+    public function deleteRequest($url, $apiKey)
+    {
+        $client = new Client(['base_uri' => $this->base_url]);
+        $options = [
+            'auth' => [$apiKey, ''],
+        ];
+
+        $request = $client->delete($url, $options);
+        return json_encode($request->getBody());
+    }
 }
