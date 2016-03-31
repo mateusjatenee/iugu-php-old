@@ -6,14 +6,18 @@ use GuzzleHttp\Client;
 
 class Request
 {
+    protected $base_url = 'https://api.iugu.com/v1/';
 
     public function postRequest($url, $data, $apiKey)
     {
-        $client = new Client(['base_uri' => 'https://api.iugu.com/v1/']);
-        $req = $client->request('POST', $url, [
+        $client = new Client(['base_uri' => $this->base_url]);
+        $options = [
             'auth' => [$apiKey, ''],
-            $data,
-        ]);
-        return json_decode($req->getBody());
+            'form_params' => $data,
+        ];
+
+        $request = $client->post($url, $options);
+        return json_decode($request->getBody());
+
     }
 }
