@@ -53,4 +53,12 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('{}', $deletedClient);
     }
+
+    public function test_clients_can_be_listed()
+    {
+        $clients = $this->iugu()->customer()->all();
+
+        $this->assertNotNull($clients);
+        $this->assertFalse($clients->errors !== 0);
+    }
 }
