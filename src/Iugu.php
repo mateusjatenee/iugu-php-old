@@ -15,4 +15,9 @@ class Iugu
     {
         return new Token($this->apiKey);
     }
+
+    public function charge()
+    {
+        return new Charge($this->apiKey);
+    }
 }
