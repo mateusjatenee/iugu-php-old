@@ -34,5 +34,8 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
                 "year" => "2014",
             ],
         ]);
+
+        $this->assertEquals($payment_method->description, 'Primeiro Cartão');
+        $this->assertEquals($payment_method->item_type, 'credit_card');
     }
 }
