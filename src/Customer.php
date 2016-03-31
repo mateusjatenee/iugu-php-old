@@ -33,7 +33,7 @@ class Customer extends Request
 
     public function all($options = null)
     {
-        $req = $this->getRequest('customers', $options);
+        $req = $this->getRequest('customers', $this->apiKey, $options);
         return $req;
     }
 

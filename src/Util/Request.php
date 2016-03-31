@@ -8,11 +8,12 @@ class Request
 {
     protected $base_url = 'https://api.iugu.com/v1/';
 
-    public function getRequest($url, $apiKey)
+    public function getRequest($url, $apiKey, $options = null)
     {
         $client = new Client(['base_uri' => $this->base_url]);
         $options = [
             'auth' => [$apiKey, ''],
+            $options,
         ];
 
         $request = $client->get($url, $options);
