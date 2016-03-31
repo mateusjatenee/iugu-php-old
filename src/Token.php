@@ -2,15 +2,17 @@
 
 namespace Iugu;
 
-class Token
+use Iugu\Util\Request;
+
+class Token extends Request
 {
 
     public function __construct($apiKey)
     {
-        $this->$apiKey = $apiKey;
+        $this->apiKey = $apiKey;
     }
 
-    public function create($data)
+    public function create(array $data)
     {
         $req = $this->postRequest('payment_token', $data);
         return $req;
