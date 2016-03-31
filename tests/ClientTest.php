@@ -1,5 +1,7 @@
 <?php
 
+use Iugu\Iugu;
+
 class ClientTest extends PHPUnit_Framework_TestCase
 {
     public function test_client_can_be_created()
