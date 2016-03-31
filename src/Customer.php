@@ -59,6 +59,9 @@ class Customer extends Request
         return $req;
     }
 
+    /**
+     * @return Iugu\PaymentMethod
+     */
     public function payment()
     {
         return new PaymentMethod($this->apiKey);
