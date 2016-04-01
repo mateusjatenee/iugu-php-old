@@ -41,4 +41,16 @@ class PaymentMethod extends Request
         $req = $this->getRequest($url, $this->apiKey);
         return $req;
     }
+
+    /**
+     * @param $userId
+     * @param $paymentId
+     * @return stdClass
+     */
+    public function delete($userId, $paymentId)
+    {
+        $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
+        $req = $this->deleteRequest($url, $this->apiKey);
+        return $req;
+    }
 }
