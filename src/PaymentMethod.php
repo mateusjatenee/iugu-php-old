@@ -21,6 +21,16 @@ class PaymentMethod extends Request
 
     /**
      * @param $id
+     * @return stdClass
+     */
+    public function all($id)
+    {
+        $req = $this->getRequest('customers/' . $id . '/payment_methods');
+        return $req;
+    }
+
+    /**
+     * @param $id
      * @param array $data
      * @return stdClass
      */
