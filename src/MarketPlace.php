@@ -2,6 +2,8 @@
 
 namespace Iugu;
 
+use Iugu\Util\Request;
+
 class MarketPlace extends Request
 {
     private $apiKey;
