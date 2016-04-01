@@ -43,4 +43,13 @@ class Iugu
     {
         return new Customer($this->apiKey);
     }
+
+    /**
+     * Retorna uma instância da classe MarketPlace
+     * @return Iugu\MarketPlace
+     */
+    public function marketPlace()
+    {
+        return new MarketPlace($this->apiKey);
+    }
 }
