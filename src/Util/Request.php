@@ -15,7 +15,7 @@ class Request
      * @param $url
      * @param $apiKey
      * @param $options
-     * @return stdObject
+     * @return stdClass
      */
     public function getRequest($url, $apiKey, $options = null)
     {
@@ -33,7 +33,7 @@ class Request
      * @param $url
      * @param $data
      * @param $apiKey
-     * @return StdObject
+     * @return stdClass
      */
     public function postRequest($url, $data, $apiKey)
     {
@@ -51,7 +51,7 @@ class Request
     /**
      * @param $url
      * @param $apiKey
-     * @return stdObject
+     * @return stdClass
      */
     public function deleteRequest($url, $apiKey)
     {
