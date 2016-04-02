@@ -1,4 +1,5 @@
-iugu-php
+iugu-php  
+[![Build Status](https://travis-ci.org/mateusjatenee/iugu-php.svg?branch=master)](https://travis-ci.org/mateusjatenee/iugu-php)
 ================
 
 Lib super simples para integracão com a Iugu. Ainda está incompleta, então não recomendo que use em producão pois ainda falta vários recursos.  
