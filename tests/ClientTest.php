@@ -26,6 +26,9 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->assertNotNull($client);
         $this->assertEquals($client->email, $email);
         $this->assertEquals($client->name, $name);
+
+        $delete = $this->iugu->customer()->delete($client->id);
+
     }
 
     public function test_client_can_be_fetched()
