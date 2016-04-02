@@ -7,10 +7,11 @@ use Iugu\Contracts\RequestInterface;
 
 class Request implements RequestInterface
 {
-    /**
-     * @var string
-     */
-    protected $base_url = 'https://api.iugu.com/v1/';
+
+    public function __construct()
+    {
+        $this->guzzle = new Client(['base_uri' => 'https://api.iugu.com/v1/']);
+    }
 
     /**
      * @param $url
@@ -20,13 +21,12 @@ class Request implements RequestInterface
      */
     public function getRequest($url, $apiKey, $options = null)
     {
-        $client = new Client(['base_uri' => $this->base_url]);
         $options = [
             'auth' => [$apiKey, ''],
             $options,
         ];
 
-        $request = $client->get($url, $options);
+        $request = $this->guzzle->get($url, $options);
         return json_decode($request->getBody());
     }
 
@@ -38,13 +38,12 @@ class Request implements RequestInterface
      */
     public function putRequest($url, $data, $apiKey)
     {
-        $client = new Client(['base_uri' => $this->base_url]);
         $options = [
             'auth' => [$apikey, ''],
             'form_params' => $data,
         ];
 
-        $request = $client->put($url, $options);
+        $request = $this->guzzle->put($url, $options);
         return json_decode($request->getBody());
     }
 
@@ -56,13 +55,12 @@ class Request implements RequestInterface
      */
     public function postRequest($url, $data, $apiKey)
     {
-        $client = new Client(['base_uri' => $this->base_url]);
         $options = [
             'auth' => [$apiKey, ''],
             'form_params' => $data,
         ];
 
-        $request = $client->post($url, $options);
+        $request = $this->guzzle->post($url, $options);
         return json_decode($request->getBody());
 
     }
@@ -74,12 +72,11 @@ class Request implements RequestInterface
      */
     public function deleteRequest($url, $apiKey)
     {
-        $client = new Client(['base_uri' => $this->base_url]);
         $options = [
             'auth' => [$apiKey, ''],
         ];
 
-        $request = $client->delete($url, $options);
+        $request = $this->guzzle->delete($url, $options);
         return json_encode($request->getBody());
     }
 }
