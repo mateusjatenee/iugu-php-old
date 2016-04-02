@@ -1,6 +1,23 @@
-# Iugu-PHP  
+iugu-php
+================
 
 Lib super simples para integracão com a Iugu. Ainda está incompleta, então não recomendo que use em producão pois ainda falta vários recursos.  
+
+#### Instalação usando o Composer
+``` bash
+$ composer require mateusjatenee/iugu-php
+```
+
+#### Changelog
+Por favor veja o arquivo [CHANGELOG](CHANGELOG.md) para mais informações.
+
+#### Rodando Testes
+``` bash
+$ phpunit
+```
+
+#### Contribuições
+Por favor veja o arquivo [CONTRIBUTING](CONTRIBUTING.md) para mais informações.
 
 ## Uso  
 
