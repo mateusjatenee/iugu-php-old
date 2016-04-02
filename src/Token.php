@@ -13,6 +13,7 @@ class Token extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
+        parent::__construct();
     }
 
     /**
