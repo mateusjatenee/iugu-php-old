@@ -13,6 +13,9 @@ class MarketplaceTest extends PHPUnit_Framework_TestCase
 
     public function test_sub_account_can_be_created()
     {
+        $this->markTestIncomplete(
+            'Not all accounts have marketplace features implemented, so there is no reason to test this now.'
+        );
         $sub_account = $this->iugu->marketPlace()->subAccount()->create([
             'name' => 'Subconta',
             'commission_percent' => '10',
