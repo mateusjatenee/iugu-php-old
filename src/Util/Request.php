@@ -3,8 +3,9 @@
 namespace Iugu\Util;
 
 use GuzzleHttp\Client;
+use Iugu\Contracts\RequestInterface;
 
-class Request
+class Request implements RequestInterface
 {
     /**
      * @var string
@@ -26,6 +27,24 @@ class Request
         ];
 
         $request = $client->get($url, $options);
+        return json_decode($request->getBody());
+    }
+
+    /**
+     * @param $url
+     * @param $data
+     * @param $apiKey
+     * @return stdClass
+     */
+    public function putRequest($url, $data, $apiKey)
+    {
+        $client = new Client(['base_uri' => $this->base_url]);
+        $options = [
+            'auth' => [$apikey, ''],
+            'form_params' => $data,
+        ];
+
+        $request = $client->put($url, $options);
         return json_decode($request->getBody());
     }
 
