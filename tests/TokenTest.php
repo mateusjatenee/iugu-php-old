@@ -4,12 +4,6 @@ use Iugu\Iugu;
 
 class TokenTest extends PHPUnit_Framework_TestCase
 {
-    protected function setUp()
-    {
-        $this->markTestSkipped(
-            'Já foi testado'
-        );
-    }
 
     public function test_token_can_be_created()
     {

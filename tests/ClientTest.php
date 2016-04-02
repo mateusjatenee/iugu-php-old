@@ -10,12 +10,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->account_id = getenv("IUGU_ACCOUNT_ID");
         $this->iugu = new Iugu($this->api_key);
     }
-    protected function setUp()
-    {
-        $this->markTestSkipped(
-            'Já foi testado'
-        );
-    }
+
     public function test_client_can_be_created()
     {
 
