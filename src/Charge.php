@@ -22,11 +22,13 @@ class Charge extends Request
 
     /**
      * @param array $data
+     *
      * @return stdClass
      */
     public function create($data)
     {
         $req = $this->postRequest('charge', $data, $this->apiKey);
+
         return $req;
     }
 }

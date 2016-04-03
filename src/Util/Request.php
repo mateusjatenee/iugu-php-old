@@ -7,7 +7,6 @@ use Iugu\Contracts\RequestInterface;
 
 class Request implements RequestInterface
 {
-
     public function __construct()
     {
         $this->guzzle = new Client(['base_uri' => 'https://api.iugu.com/v1/']);
@@ -17,6 +16,7 @@ class Request implements RequestInterface
      * @param $url
      * @param $apiKey
      * @param $options
+     *
      * @return stdClass
      */
     public function getRequest($url, $apiKey, $options = null)
@@ -27,6 +27,7 @@ class Request implements RequestInterface
         ];
 
         $request = $this->guzzle->get($url, $options);
+
         return json_decode($request->getBody());
     }
 
@@ -34,16 +35,18 @@ class Request implements RequestInterface
      * @param $url
      * @param $data
      * @param $apiKey
+     *
      * @return stdClass
      */
     public function putRequest($url, $data, $apiKey)
     {
         $options = [
-            'auth' => [$apikey, ''],
+            'auth'        => [$apikey, ''],
             'form_params' => $data,
         ];
 
         $request = $this->guzzle->put($url, $options);
+
         return json_decode($request->getBody());
     }
 
@@ -51,23 +54,25 @@ class Request implements RequestInterface
      * @param $url
      * @param $data
      * @param $apiKey
+     *
      * @return stdClass
      */
     public function postRequest($url, $data, $apiKey)
     {
         $options = [
-            'auth' => [$apiKey, ''],
+            'auth'        => [$apiKey, ''],
             'form_params' => $data,
         ];
 
         $request = $this->guzzle->post($url, $options);
-        return json_decode($request->getBody());
 
+        return json_decode($request->getBody());
     }
 
     /**
      * @param $url
      * @param $apiKey
+     *
      * @return stdClass
      */
     public function deleteRequest($url, $apiKey)
@@ -77,6 +82,7 @@ class Request implements RequestInterface
         ];
 
         $request = $this->guzzle->delete($url, $options);
+
         return json_encode($request->getBody());
     }
 }
