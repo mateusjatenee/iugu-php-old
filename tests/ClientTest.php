@@ -6,20 +6,19 @@ class ClientTest extends PHPUnit_Framework_TestCase
 {
     public function __construct()
     {
-        $this->api_key = getenv("IUGU_API_KEY");
-        $this->account_id = getenv("IUGU_ACCOUNT_ID");
+        $this->api_key = getenv('IUGU_API_KEY');
+        $this->account_id = getenv('IUGU_ACCOUNT_ID');
         $this->iugu = new Iugu($this->api_key);
     }
 
     public function test_client_can_be_created()
     {
-
         $email = 'email@email.com';
         $name = 'Joao';
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name' => $name,
+            'name'  => $name,
             'notes' => 'nenhuma',
         ]);
 
@@ -35,7 +34,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
     {
         $client = $this->iugu->customer()->create([
             'email' => 'john@doe.com',
-            'name' => 'John Doe',
+            'name'  => 'John Doe',
             'notes' => 'None',
         ]);
 
@@ -49,7 +48,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
     {
         $client = $this->iugu->customer()->create([
             'email' => 'john@doe.com',
-            'name' => 'John Doe',
+            'name'  => 'John Doe',
             'notes' => 'None',
         ]);
 

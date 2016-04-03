@@ -6,7 +6,6 @@ use Iugu\Util\Request;
 
 class Token extends Request
 {
-
     /**
      * @param $apiKey
      */
@@ -18,6 +17,7 @@ class Token extends Request
 
     /**
      * @param array $data
+     *
      * @return stdClass
      */
     public function create(array $data)

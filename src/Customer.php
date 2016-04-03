@@ -22,41 +22,49 @@ class Customer extends Request
 
     /**
      * @param array $data
+     *
      * @return stdClass
      */
     public function create(array $data)
     {
         $req = $this->postRequest('customers', $data, $this->apiKey);
+
         return $req;
     }
 
     /**
      * @param $id
+     *
      * @return stdClass
      */
     public function fetch($id)
     {
-        $req = $this->getRequest('customers/' . $id, $this->apiKey);
+        $req = $this->getRequest('customers/'.$id, $this->apiKey);
+
         return $req;
     }
 
     /**
      * @param $id
+     *
      * @return void
      */
     public function delete($id)
     {
-        $req = $this->deleteRequest('customers/' . $id, $this->apiKey);
+        $req = $this->deleteRequest('customers/'.$id, $this->apiKey);
+
         return $req;
     }
 
     /**
      * @param $options
+     *
      * @return array
      */
     public function all($options = null)
     {
         $req = $this->getRequest('customers', $this->apiKey, $options);
+
         return $req;
     }
 
@@ -67,5 +75,4 @@ class Customer extends Request
     {
         return new PaymentMethod($this->apiKey);
     }
-
 }

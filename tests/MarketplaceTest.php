@@ -6,8 +6,8 @@ class MarketplaceTest extends PHPUnit_Framework_TestCase
 {
     public function __construct()
     {
-        $this->api_key = getenv("IUGU_API_KEY");
-        $this->account_id = getenv("IUGU_ACCOUNT_ID");
+        $this->api_key = getenv('IUGU_API_KEY');
+        $this->account_id = getenv('IUGU_ACCOUNT_ID');
         $this->iugu = new Iugu($this->api_key);
     }
 
@@ -17,7 +17,7 @@ class MarketplaceTest extends PHPUnit_Framework_TestCase
             'Not all accounts have marketplace features implemented, so there is no reason to test this now.'
         );
         $sub_account = $this->iugu->marketPlace()->subAccount()->create([
-            'name' => 'Subconta',
+            'name'               => 'Subconta',
             'commission_percent' => '10',
         ]);
 

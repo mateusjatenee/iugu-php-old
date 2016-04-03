@@ -18,7 +18,8 @@ class Iugu
     }
 
     /**
-     * Retorna uma instância da classe Token
+     * Retorna uma instância da classe Token.
+     *
      * @return Iugu\Token
      */
     public function token()
@@ -27,7 +28,8 @@ class Iugu
     }
 
     /**
-     * Retorna uma instância da classe Charge
+     * Retorna uma instância da classe Charge.
+     *
      * @return Iugu\Charge
      */
     public function charge()
@@ -36,7 +38,8 @@ class Iugu
     }
 
     /**
-     * Retorna uma instância da classe Customer
+     * Retorna uma instância da classe Customer.
+     *
      * @return Iugu\Customer
      */
     public function customer()
@@ -45,7 +48,8 @@ class Iugu
     }
 
     /**
-     * Retorna uma instância da classe MarketPlace
+     * Retorna uma instância da classe MarketPlace.
+     *
      * @return Iugu\MarketPlace
      */
     public function marketPlace()
