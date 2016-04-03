@@ -22,11 +22,13 @@ class SubAccount extends Request
 
     /**
      * @param $data
+     *
      * @return stdClass
      */
     public function create($data)
     {
         $req = $this->postRequest('marketplace/create_account', $data, $this->apiKey);
+
         return $req;
     }
 }
