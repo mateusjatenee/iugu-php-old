@@ -14,7 +14,6 @@ class ClientTest extends PHPUnit_Framework_TestCase
     /**
      * @group client
      */
-
     public function testClientCanBeCreated()
     {
         $email = 'email@email.com';
@@ -22,7 +21,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name' => $name,
+            'name'  => $name,
             'notes' => 'nenhuma',
         ]);
 
@@ -31,18 +30,16 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($client->name, $name);
 
         $delete = $this->iugu->customer()->delete($client->id);
-
     }
 
     /**
      * @group client
      */
-
     public function testClientCanBeFetched()
     {
         $client = $this->iugu->customer()->create([
             'email' => 'john@doe.com',
-            'name' => 'John Doe',
+            'name'  => 'John Doe',
             'notes' => 'None',
         ]);
 
@@ -55,12 +52,11 @@ class ClientTest extends PHPUnit_Framework_TestCase
     /**
      * @group client
      */
-
     public function testClientCanBeDeleted()
     {
         $client = $this->iugu->customer()->create([
             'email' => 'john@doe.com',
-            'name' => 'John Doe',
+            'name'  => 'John Doe',
             'notes' => 'None',
         ]);
 
@@ -72,7 +68,6 @@ class ClientTest extends PHPUnit_Framework_TestCase
     /**
      * @group client
      */
-
     public function testClientsCanBeListed()
     {
         $clients = $this->iugu->customer()->all();
