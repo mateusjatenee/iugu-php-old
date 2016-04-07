@@ -8,4 +8,5 @@
 /LICENSE.md export-ignore
 /README.md export-ignore
 /phpunit.xml export-ignore
+/.phpintel export-ignore
 /tests export-ignore
