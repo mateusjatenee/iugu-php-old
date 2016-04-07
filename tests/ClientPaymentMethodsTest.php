@@ -11,6 +11,10 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
         $this->iugu = new Iugu($this->api_key);
     }
 
+    /**
+     * @group client_payment_method
+     */
+
     public function testPaymentMethodCanBeCreated()
     {
         $email = 'email@email.com';
@@ -41,6 +45,10 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
         $this->assertObjectHasAttribute('data', $payment_method);
     }
 
+    /**
+     * @group client_payment_method
+     */
+
     public function testCustomerPaymentMethodCanBeFetched()
     {
         $email = 'email@email.com';
@@ -69,6 +77,10 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($payment_method->description, $fetched_payment_method->description);
     }
+
+    /**
+     * @group client_payment_method
+     */
 
     public function testCustomerPaymentMethodCanBeRemoved()
     {
