@@ -11,14 +11,18 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->iugu = new Iugu($this->api_key);
     }
 
-    public function test_client_can_be_created()
+    /**
+     * @group client
+     */
+
+    public function testClientCanBeCreated()
     {
         $email = 'email@email.com';
         $name = 'Joao';
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name'  => $name,
+            'name' => $name,
             'notes' => 'nenhuma',
         ]);
 
@@ -30,11 +34,15 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
     }
 
-    public function test_client_can_be_fetched()
+    /**
+     * @group client
+     */
+
+    public function testClientCanBeFetched()
     {
         $client = $this->iugu->customer()->create([
             'email' => 'john@doe.com',
-            'name'  => 'John Doe',
+            'name' => 'John Doe',
             'notes' => 'None',
         ]);
 
@@ -44,11 +52,15 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($foundCustomer->name, $client->name);
     }
 
-    public function test_client_can_be_deleted()
+    /**
+     * @group client
+     */
+
+    public function testClientCanBeDeleted()
     {
         $client = $this->iugu->customer()->create([
             'email' => 'john@doe.com',
-            'name'  => 'John Doe',
+            'name' => 'John Doe',
             'notes' => 'None',
         ]);
 
@@ -57,7 +69,11 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('{}', $deletedClient);
     }
 
-    public function test_clients_can_be_listed()
+    /**
+     * @group client
+     */
+
+    public function testClientsCanBeListed()
     {
         $clients = $this->iugu->customer()->all();
 
