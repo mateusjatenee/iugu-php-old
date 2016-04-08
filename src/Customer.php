@@ -39,7 +39,7 @@ class Customer extends Request
      */
     public function fetch($id)
     {
-        $req = $this->getRequest('customers/'.$id, $this->apiKey);
+        $req = $this->getRequest('customers/' . $id, $this->apiKey);
 
         return $req;
     }
@@ -47,11 +47,11 @@ class Customer extends Request
     /**
      * @param $id
      *
-     * @return void
+     * @return \stdClass
      */
     public function delete($id)
     {
-        $req = $this->deleteRequest('customers/'.$id, $this->apiKey);
+        $req = $this->deleteRequest('customers/' . $id, $this->apiKey);
 
         return $req;
     }
