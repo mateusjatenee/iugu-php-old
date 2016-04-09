@@ -2,8 +2,6 @@
 
 namespace Iugu;
 
-use Iugu\Transfer;
-
 class Iugu
 {
     /**
@@ -61,6 +59,7 @@ class Iugu
 
     /**
      * Retorna uma instância da classe Transfer.
+     *
      * @return Iugu\Transfer
      */
     public function transfer()
@@ -70,6 +69,7 @@ class Iugu
 
     /**
      * Retorna uma instância da classe Subscription.
+     *
      * @return Iugu\Subscription
      */
     public function subscription()

@@ -22,6 +22,7 @@ class Transfer extends Request
 
     /**
      * @param array $data
+     *
      * @return \stdClass
      */
     public function create(array $data)

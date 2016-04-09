@@ -9,7 +9,6 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
         $this->api_key = getenv('IUGU_API_KEY');
         $this->account_id = getenv('IUGU_ACCOUNT_ID');
         $this->iugu = new Iugu($this->api_key);
-
     }
 
     /**
@@ -17,7 +16,6 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCanBeCreated()
     {
-
         $this->markTestIncomplete('Iugu says subitems should be an array - it already is. Buggy?');
 
         $email = 'email@email.com';
@@ -25,16 +23,16 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name' => $name,
+            'name'  => $name,
             'notes' => 'nenhuma',
         ]);
 
         $data = [
             'customer_id' => $client->id,
-            'subitems' => [
+            'subitems'    => [
                 [
                     'description' => 'Item um',
-                    'quantity' => '1',
+                    'quantity'    => '1',
                     'price_cents' => '1000',
                 ],
             ],
@@ -44,6 +42,5 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($subscription->customer_name, $client->name);
         $this->assertEquals($subscription->customer_id, $client->id);
-
     }
 }
