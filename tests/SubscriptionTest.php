@@ -17,9 +17,12 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCanBeCreated()
     {
+        $email = 'email@email.com';
+        $name = 'Joao';
+
         $client = $this->iugu->customer()->create([
-            'email' => 'John Doe',
-            'name' => 'email@email.com',
+            'email' => $email,
+            'name' => $name,
             'notes' => 'nenhuma',
         ]);
 
