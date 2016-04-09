@@ -20,4 +20,11 @@ class Transfer extends Request
 
         return $req;
     }
+
+    public function all()
+    {
+        $req = $this->getRequest('transfers', $this->apiKey);
+
+        return $req;
+    }
 }
