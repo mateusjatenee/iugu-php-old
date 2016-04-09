@@ -26,5 +26,4 @@ class Subscription extends Request
 
         return $req;
     }
-
 }
