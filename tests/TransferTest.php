@@ -16,6 +16,10 @@ class TransferTest extends PHPUnit_Framework_TestCase
      */
     public function testTransferCanBeDone()
     {
+        $this->markTestIncomplete(
+            'Requires a live environment.'
+        );
+
         $email = 'email@email.com';
         $name = 'Joao';
 
