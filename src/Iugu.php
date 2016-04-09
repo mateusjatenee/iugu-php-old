@@ -2,6 +2,8 @@
 
 namespace Iugu;
 
+use Iugu\Transfer;
+
 class Iugu
 {
     /**
@@ -55,5 +57,10 @@ class Iugu
     public function marketPlace()
     {
         return new MarketPlace($this->apiKey);
+    }
+
+    public function transfer()
+    {
+        return new Transfer($this->apiKey);
     }
 }
