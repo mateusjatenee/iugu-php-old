@@ -67,4 +67,13 @@ class Iugu
     {
         return new Transfer($this->apiKey);
     }
+
+    /**
+     * Retorna uma instância da classe Subscription.
+     * @return Iugu\Subscription
+     */
+    public function subscription()
+    {
+        return new Subscription($this->apiKey);
+    }
 }
