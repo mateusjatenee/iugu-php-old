@@ -59,6 +59,10 @@ class Iugu
         return new MarketPlace($this->apiKey);
     }
 
+    /**
+     * Retorna uma instância da classe Transfer.
+     * @return Iugu\Transfer
+     */
     public function transfer()
     {
         return new Transfer($this->apiKey);
