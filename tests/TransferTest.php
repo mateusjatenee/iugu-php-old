@@ -9,6 +9,9 @@ class TransferTest extends PHPUnit_Framework_TestCase
         $this->iugu = new Iugu($this->api_key);
     }
 
+    /**
+     * @group transfer
+     */
     public function testTransferCanBeDone()
     {
         $email = 'email@email.com';
