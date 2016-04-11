@@ -78,7 +78,7 @@ class Iugu
     }
 
     /**
-     * Retorna uma instância da classe Invoice
+     * Retorna uma instância da classe Invoice.
      *
      * @return Iugu\Invoice
      */
