@@ -17,13 +17,13 @@ class InvoiceTest extends PHPUnit_Framework_TestCase
     public function testInvoiceCanBeCreated()
     {
         $invoice = $this->iugu->invoice()->create([
-            "email" => "teste@teste.com",
-            "due_date" => "30/11/2016",
-            "items" => [
+            'email'    => 'teste@teste.com',
+            'due_date' => '30/11/2016',
+            'items'    => [
                 [
-                    "description" => "Item Um",
-                    "quantity" => "1",
-                    "price_cents" => "1000",
+                    'description' => 'Item Um',
+                    'quantity'    => '1',
+                    'price_cents' => '1000',
                 ],
             ],
         ]);
@@ -31,6 +31,5 @@ class InvoiceTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($invoice->due_date, '2016-11-30');
         $this->assertEquals($invoice->currency, 'BRL');
         $this->assertEquals($invoice->email, 'teste@teste.com');
-
     }
 }
