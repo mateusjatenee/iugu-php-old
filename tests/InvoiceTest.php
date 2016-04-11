@@ -16,6 +16,8 @@ class InvoiceTest extends PHPUnit_Framework_TestCase
      */
     public function testInvoiceCanBeCreated()
     {
+        $this->markTestIncomplete('The invoice tests are incomplete.');
+
         $invoice = $this->iugu->invoice()->create([
             "email" => "teste@teste.com",
             "due_date" => "30/11/2016",
