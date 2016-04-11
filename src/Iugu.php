@@ -76,4 +76,14 @@ class Iugu
     {
         return new Subscription($this->apiKey);
     }
+
+    /**
+     * Retorna uma instância da classe Invoice
+     *
+     * @return Iugu\Invoice
+     */
+    public function invoice()
+    {
+        return new Invoice($this->apiKey);
+    }
 }
