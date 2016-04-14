@@ -1,6 +1,6 @@
 <?php
 
-use Iugu\Iugu;
+use Mateusjatenee\Iugu\Iugu;
 
 class SubscriptionTest extends PHPUnit_Framework_TestCase
 {
@@ -23,16 +23,16 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name'  => $name,
+            'name' => $name,
             'notes' => 'nenhuma',
         ]);
 
         $data = [
             'customer_id' => $client->id,
-            'subitems'    => [
+            'subitems' => [
                 [
                     'description' => 'Item um',
-                    'quantity'    => '1',
+                    'quantity' => '1',
                     'price_cents' => '1000',
                 ],
             ],

@@ -1,6 +1,6 @@
 <?php
 
-use Iugu\Iugu;
+use Mateusjatenee\Iugu\Iugu;
 
 class TransferTest extends PHPUnit_Framework_TestCase
 {
@@ -25,12 +25,12 @@ class TransferTest extends PHPUnit_Framework_TestCase
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name'  => $name,
+            'name' => $name,
             'notes' => 'nenhuma',
         ]);
 
         $transferance = $this->iugu->transfer()->create([
-            'receiver_id'  => $client->id,
+            'receiver_id' => $client->id,
             'amount_cents' => 100,
         ]);
 

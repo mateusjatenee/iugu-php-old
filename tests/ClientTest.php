@@ -1,6 +1,6 @@
 <?php
 
-use Iugu\Iugu;
+use Mateusjatenee\Iugu\Iugu;
 
 class ClientTest extends PHPUnit_Framework_TestCase
 {
@@ -67,7 +67,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name'  => $name,
+            'name' => $name,
             'notes' => 'nenhuma',
         ]);
 

@@ -1,6 +1,6 @@
 <?php
 
-use Iugu\Iugu;
+use Mateusjatenee\Iugu\Iugu;
 
 class ChargeTest extends PHPUnit_Framework_TestCase
 {
@@ -16,15 +16,15 @@ class ChargeTest extends PHPUnit_Framework_TestCase
 
         $token = $iugu->token()->create([
             'account_id' => $account_id,
-            'method'     => 'credit_card',
-            'test'       => true,
-            'data'       => [
-                'number'             => '4111111111111111',
+            'method' => 'credit_card',
+            'test' => true,
+            'data' => [
+                'number' => '4111111111111111',
                 'verification_value' => '123',
-                'first_name'         => 'Joao',
-                'last_name'          => 'Silva',
-                'month'              => '12',
-                'year'               => '2016',
+                'first_name' => 'Joao',
+                'last_name' => 'Silva',
+                'month' => '12',
+                'year' => '2016',
             ],
         ]);
 
@@ -33,7 +33,7 @@ class ChargeTest extends PHPUnit_Framework_TestCase
             'email' => 'teste@superteste.abc',
             'items' => [
                 'description' => 'Item Teste',
-                'quantity'    => '1',
+                'quantity' => '1',
                 'price_cents' => '100',
             ],
         ]);

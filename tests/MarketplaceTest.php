@@ -1,6 +1,6 @@
 <?php
 
-use Iugu\Iugu;
+use Mateusjatenee\Iugu\Iugu;
 
 class MarketplaceTest extends PHPUnit_Framework_TestCase
 {
@@ -20,7 +20,7 @@ class MarketplaceTest extends PHPUnit_Framework_TestCase
             'Not all accounts have marketplace features implemented, so there is no reason to test this now.'
         );
         $sub_account = $this->iugu->marketPlace()->subAccount()->create([
-            'name'               => 'Subconta',
+            'name' => 'Subconta',
             'commission_percent' => '10',
         ]);
 
