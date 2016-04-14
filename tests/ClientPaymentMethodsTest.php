@@ -18,18 +18,7 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
     {
         $client = $this->createClient();
 
-        $payment_method = $this->iugu->customer()->payment()->create($client->id, [
-            'description' => 'Primeiro Cartão',
-            'item_type' => 'credit_card',
-            'data' => [
-                'number' => '4111111111111111',
-                'verification_value' => '123',
-                'first_name' => 'Nome',
-                'last_name' => 'Sobrenome',
-                'month' => '12',
-                'year' => '2014',
-            ],
-        ]);
+        $payment_method = $this->createPaymentMethod($client);
 
         $this->assertEquals($payment_method->description, 'Primeiro Cartão');
         $this->assertEquals($payment_method->item_type, 'credit_card');
@@ -44,18 +33,7 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
     {
         $client = $this->createClient();
 
-        $payment_method = $this->iugu->customer()->payment()->create($client->id, [
-            'description' => 'Primeiro Cartão',
-            'item_type' => 'credit_card',
-            'data' => [
-                'number' => '4111111111111111',
-                'verification_value' => '123',
-                'first_name' => 'Nome',
-                'last_name' => 'Sobrenome',
-                'month' => '12',
-                'year' => '2014',
-            ],
-        ]);
+        $payment_method = $this->createPaymentMethod($client);
 
         $fetched_payment_method = $this->iugu->customer()->payment()->fetch($client->id, $payment_method->id);
 
@@ -69,18 +47,7 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
     {
         $client = $this->createClient();
 
-        $payment_method = $this->iugu->customer()->payment()->create($client->id, [
-            'description' => 'Primeiro Cartão',
-            'item_type' => 'credit_card',
-            'data' => [
-                'number' => '4111111111111111',
-                'verification_value' => '123',
-                'first_name' => 'Nome',
-                'last_name' => 'Sobrenome',
-                'month' => '12',
-                'year' => '2014',
-            ],
-        ]);
+        $payment_method = $this->createPaymentMethod($client);
 
         $deleted_payment_method = $this->iugu->customer()->payment()->delete($client->id, $payment_method->id);
 
@@ -99,5 +66,23 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
         ]);
 
         return $client;
+    }
+
+    protected function createPaymentMethod($client)
+    {
+        $payment_method = $this->iugu->customer()->payment()->create($client->id, [
+            'description' => 'Primeiro Cartão',
+            'item_type' => 'credit_card',
+            'data' => [
+                'number' => '4111111111111111',
+                'verification_value' => '123',
+                'first_name' => 'Nome',
+                'last_name' => 'Sobrenome',
+                'month' => '12',
+                'year' => '2014',
+            ],
+        ]);
+
+        return $payment_method;
     }
 }
