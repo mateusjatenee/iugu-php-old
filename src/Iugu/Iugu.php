@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu;
+namespace Mateusjatenee\Iugu;
 
 class Iugu
 {

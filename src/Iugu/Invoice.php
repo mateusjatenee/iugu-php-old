@@ -1,10 +1,10 @@
 <?php
 
-namespace Iugu;
+namespace Mateusjatenee\Iugu;
 
-use Iugu\Util\Request;
+use Mateusjatenee\Iugu\Util\Request;
 
-class Subscription extends Request
+class Invoice extends Request
 {
     /**
      * @var string
@@ -22,7 +22,7 @@ class Subscription extends Request
 
     public function create(array $data)
     {
-        $req = $this->postRequest('subscriptions', $data, $this->apiKey);
+        $req = $this->postRequest('invoices', $data, $this->apiKey);
 
         return $req;
     }

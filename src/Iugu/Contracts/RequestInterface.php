@@ -1,6 +1,6 @@
 <?php
 
-namespace Iugu\Contracts;
+namespace Mateusjatenee\Iugu\Contracts;
 
 interface RequestInterface
 {

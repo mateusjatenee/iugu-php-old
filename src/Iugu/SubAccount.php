@@ -1,8 +1,8 @@
 <?php
 
-namespace Iugu;
+namespace Mateusjatenee\Iugu;
 
-use Iugu\Util\Request;
+use Mateusjatenee\Iugu\Util\Request;
 
 class SubAccount extends Request
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Iugu\Util;
+namespace Mateusjatenee\Iugu\Util;
 
 use GuzzleHttp\Client;
-use Iugu\Contracts\RequestInterface;
+use Mateusjatenee\Iugu\Contracts\RequestInterface;
 
 class Request implements RequestInterface
 {
@@ -41,7 +41,7 @@ class Request implements RequestInterface
     public function putRequest($url, $data, $apiKey)
     {
         $options = [
-            'auth'        => [$apikey, ''],
+            'auth' => [$apikey, ''],
             'form_params' => $data,
         ];
 
@@ -60,7 +60,7 @@ class Request implements RequestInterface
     public function postRequest($url, $data, $apiKey)
     {
         $options = [
-            'auth'        => [$apiKey, ''],
+            'auth' => [$apiKey, ''],
             'form_params' => $data,
         ];
 
