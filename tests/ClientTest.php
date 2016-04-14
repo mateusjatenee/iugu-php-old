@@ -16,18 +16,11 @@ class ClientTest extends PHPUnit_Framework_TestCase
      */
     public function testClientCanBeCreated()
     {
-        $email = 'email@email.com';
-        $name = 'Joao';
-
-        $client = $this->iugu->customer()->create([
-            'email' => $email,
-            'name'  => $name,
-            'notes' => 'nenhuma',
-        ]);
+        $client = $this->createClient();
 
         $this->assertNotNull($client);
-        $this->assertEquals($client->email, $email);
-        $this->assertEquals($client->name, $name);
+        $this->assertEquals($client->email, 'email@email.com');
+        $this->assertEquals($client->name, 'Joao');
 
         $delete = $this->iugu->customer()->delete($client->id);
     }
@@ -37,11 +30,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
      */
     public function testClientCanBeFetched()
     {
-        $client = $this->iugu->customer()->create([
-            'email' => 'john@doe.com',
-            'name'  => 'John Doe',
-            'notes' => 'None',
-        ]);
+        $client = $this->createClient();
 
         $foundCustomer = $this->iugu->customer()->fetch($client->id);
 
@@ -54,11 +43,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
      */
     public function testClientCanBeDeleted()
     {
-        $client = $this->iugu->customer()->create([
-            'email' => 'john@doe.com',
-            'name'  => 'John Doe',
-            'notes' => 'None',
-        ]);
+        $client = $this->createClient();
 
         $deletedClient = $this->iugu->customer()->delete($client->id);
 
@@ -73,5 +58,19 @@ class ClientTest extends PHPUnit_Framework_TestCase
         $clients = $this->iugu->customer()->all();
 
         $this->assertNotNull($clients);
+    }
+
+    protected function createClient()
+    {
+        $email = 'email@email.com';
+        $name = 'Joao';
+
+        $client = $this->iugu->customer()->create([
+            'email' => $email,
+            'name' => $name,
+            'notes' => 'nenhuma',
+        ]);
+
+        return $client;
     }
 }
