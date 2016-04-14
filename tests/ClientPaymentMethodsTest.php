@@ -16,25 +16,18 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
      */
     public function testPaymentMethodCanBeCreated()
     {
-        $email = 'email@email.com';
-        $name = 'Joao';
-
-        $client = $this->iugu->customer()->create([
-            'email' => $email,
-            'name'  => $name,
-            'notes' => 'nenhuma',
-        ]);
+        $client = $this->createClient();
 
         $payment_method = $this->iugu->customer()->payment()->create($client->id, [
             'description' => 'Primeiro Cartão',
-            'item_type'   => 'credit_card',
-            'data'        => [
-                'number'             => '4111111111111111',
+            'item_type' => 'credit_card',
+            'data' => [
+                'number' => '4111111111111111',
                 'verification_value' => '123',
-                'first_name'         => 'Nome',
-                'last_name'          => 'Sobrenome',
-                'month'              => '12',
-                'year'               => '2014',
+                'first_name' => 'Nome',
+                'last_name' => 'Sobrenome',
+                'month' => '12',
+                'year' => '2014',
             ],
         ]);
 
@@ -49,25 +42,18 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
      */
     public function testCustomerPaymentMethodCanBeFetched()
     {
-        $email = 'email@email.com';
-        $name = 'Joao';
-
-        $client = $this->iugu->customer()->create([
-            'email' => $email,
-            'name'  => $name,
-            'notes' => 'nenhuma',
-        ]);
+        $client = $this->createClient();
 
         $payment_method = $this->iugu->customer()->payment()->create($client->id, [
             'description' => 'Primeiro Cartão',
-            'item_type'   => 'credit_card',
-            'data'        => [
-                'number'             => '4111111111111111',
+            'item_type' => 'credit_card',
+            'data' => [
+                'number' => '4111111111111111',
                 'verification_value' => '123',
-                'first_name'         => 'Nome',
-                'last_name'          => 'Sobrenome',
-                'month'              => '12',
-                'year'               => '2014',
+                'first_name' => 'Nome',
+                'last_name' => 'Sobrenome',
+                'month' => '12',
+                'year' => '2014',
             ],
         ]);
 
@@ -81,30 +67,37 @@ class ClientPaymentMethodsTest extends PHPUnit_Framework_TestCase
      */
     public function testCustomerPaymentMethodCanBeRemoved()
     {
-        $email = 'email@email.com';
-        $name = 'Joao';
-
-        $client = $this->iugu->customer()->create([
-            'email' => $email,
-            'name'  => $name,
-            'notes' => 'nenhuma',
-        ]);
+        $client = $this->createClient();
 
         $payment_method = $this->iugu->customer()->payment()->create($client->id, [
             'description' => 'Primeiro Cartão',
-            'item_type'   => 'credit_card',
-            'data'        => [
-                'number'             => '4111111111111111',
+            'item_type' => 'credit_card',
+            'data' => [
+                'number' => '4111111111111111',
                 'verification_value' => '123',
-                'first_name'         => 'Nome',
-                'last_name'          => 'Sobrenome',
-                'month'              => '12',
-                'year'               => '2014',
+                'first_name' => 'Nome',
+                'last_name' => 'Sobrenome',
+                'month' => '12',
+                'year' => '2014',
             ],
         ]);
 
         $deleted_payment_method = $this->iugu->customer()->payment()->delete($client->id, $payment_method->id);
 
         $this->assertEquals($deleted_payment_method, '{}');
+    }
+
+    protected function createClient()
+    {
+        $email = 'email@email.com';
+        $name = 'Joao';
+
+        $client = $this->iugu->customer()->create([
+            'email' => $email,
+            'name' => $name,
+            'notes' => 'nenhuma',
+        ]);
+
+        return $client;
     }
 }
