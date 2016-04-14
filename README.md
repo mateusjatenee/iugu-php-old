@@ -26,12 +26,12 @@ Por favor veja o arquivo [CONTRIBUTING](CONTRIBUTING.md) para mais informações
 
 A primeira coisa que deve ser feita é instalá-la pelo Composer. Para fazer isso, apenas rode `composer require mateusjatenee/iugu-php` no Terminal.  
 
-Após isso, é necessário instânciar a classe `Iugu`. Essa lib se beneficia do Autoloader, então não é necessário usar o `require` em nada. Apenas certifique-se de ter importado o namespace certo.  (Por enquanto o namespace inicial é Iugu, não sei se eles deixarão e acho que fica estranho. Talvez mude para mateusjatenee\Iugu).
+Após isso, é necessário instânciar a classe `Iugu`. Essa lib se beneficia do Autoloader, então não é necessário usar o `require` em nada. Apenas certifique-se de ter importado o namespace certo.  (Mateusjatenee\Iugu).
 
 ```php
 <?php 
 
-use Iugu\Iugu;
+use Mateusjatenee\Iugu\Iugu;
 
 $iugu = new Iugu('SUA CHAVE DE API AQUI');
 
