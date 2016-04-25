@@ -16,23 +16,23 @@ class SubscriptionTest extends PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCanBeCreated()
     {
-        $this->markTestIncomplete('Iugu says subitems should be an array - it already is. Buggy?');
+        $this->markTestIncomplete('Buggy code');
 
         $email = 'email@email.com';
         $name = 'Joao';
 
         $client = $this->iugu->customer()->create([
             'email' => $email,
-            'name'  => $name,
+            'name' => $name,
             'notes' => 'nenhuma',
         ]);
 
         $data = [
             'customer_id' => $client->id,
-            'subitems'    => [
+            'subitems' => [
                 [
                     'description' => 'Item um',
-                    'quantity'    => '1',
+                    'quantity' => '1',
                     'price_cents' => '1000',
                 ],
             ],
