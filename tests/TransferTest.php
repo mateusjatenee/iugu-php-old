@@ -4,7 +4,7 @@ use Mateusjatenee\Iugu\Iugu;
 
 class TransferTest extends PHPUnit_Framework_TestCase
 {
-    public function __construct()
+    public function setUp()
     {
         $this->api_key = getenv('IUGU_API_KEY');
         $this->account_id = getenv('IUGU_ACCOUNT_ID');
