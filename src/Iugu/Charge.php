@@ -4,12 +4,13 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Charge extends Request
+class Charge
 {
     /**
      * @var string
      */
     private $apiKey;
+    private $request;
 
     /**
      * @param $apiKey
@@ -17,7 +18,7 @@ class Charge extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     /**
@@ -27,7 +28,7 @@ class Charge extends Request
      */
     public function create($data)
     {
-        $req = $this->post('charge', $data, $this->apiKey);
+        $req = $this->request->post('charge', $data, $this->apiKey);
 
         return $req;
     }

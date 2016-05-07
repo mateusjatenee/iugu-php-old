@@ -4,15 +4,18 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Token extends Request
+class Token
 {
+    private $apiKey;
+    private $request;
+
     /**
      * @param $apiKey
      */
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     /**

@@ -4,12 +4,13 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class PaymentMethod extends Request
+class PaymentMethod
 {
     /**
      * @var string
      */
     private $apiKey;
+    private $request;
 
     /**
      * @param $apiKey
@@ -17,7 +18,7 @@ class PaymentMethod extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     /**
@@ -27,7 +28,7 @@ class PaymentMethod extends Request
      */
     public function all($id)
     {
-        $req = $this->get('customers/' . $id . '/payment_methods');
+        $req = $this->request->get('customers/' . $id . '/payment_methods');
 
         return $req;
     }
@@ -40,7 +41,7 @@ class PaymentMethod extends Request
      */
     public function create($id, array $data)
     {
-        $req = $this->post('customers/' . $id . '/payment_methods', $data, $this->apiKey);
+        $req = $this->request->post('customers/' . $id . '/payment_methods', $data, $this->apiKey);
 
         return $req;
     }
@@ -54,7 +55,7 @@ class PaymentMethod extends Request
     public function fetch($userId, $paymentId)
     {
         $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
-        $req = $this->get($url, $this->apiKey);
+        $req = $this->request->get($url, $this->apiKey);
 
         return $req;
     }
@@ -68,7 +69,7 @@ class PaymentMethod extends Request
     public function delete($userId, $paymentId)
     {
         $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
-        $req = $this->delete($url, $this->apiKey);
+        $req = $this->request->delete($url, $this->apiKey);
 
         return $req;
     }

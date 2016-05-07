@@ -4,12 +4,13 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Transfer extends Request
+class Transfer
 {
     /**
      * @var string
      */
     private $apiKey;
+    private $request;
 
     /**
      * @param $apiKey
@@ -17,7 +18,7 @@ class Transfer extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     /**
@@ -27,7 +28,7 @@ class Transfer extends Request
      */
     public function create(array $data)
     {
-        $req = $this->post('transfers', $data, $this->apiKey);
+        $req = $this->request->post('transfers', $data, $this->apiKey);
 
         return $req;
     }
@@ -37,7 +38,7 @@ class Transfer extends Request
      */
     public function all()
     {
-        $req = $this->get('transfers', $this->apiKey);
+        $req = $this->request->get('transfers', $this->apiKey);
 
         return $req;
     }

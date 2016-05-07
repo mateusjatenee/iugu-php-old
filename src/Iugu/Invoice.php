@@ -4,12 +4,13 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Invoice extends Request
+class Invoice
 {
     /**
      * @var string
      */
     private $apiKey;
+    private $request;
 
     /**
      * @param $apiKey
@@ -17,12 +18,12 @@ class Invoice extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     public function create(array $data)
     {
-        $req = $this->post('invoices', $data, $this->apiKey);
+        $req = $this->request->post('invoices', $data, $this->apiKey);
 
         return $req;
     }

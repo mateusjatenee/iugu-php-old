@@ -4,12 +4,13 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Customer extends Request
+class Customer
 {
     /**
      * @var string
      */
     private $apiKey;
+    private $request;
 
     /**
      * @param $apiKey
@@ -17,7 +18,7 @@ class Customer extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     /**
@@ -27,7 +28,7 @@ class Customer extends Request
      */
     public function create(array $data)
     {
-        $req = $this->post('customers', $data, $this->apiKey);
+        $req = $this->request->post('customers', $data, $this->apiKey);
 
         return $req;
     }
@@ -39,7 +40,7 @@ class Customer extends Request
      */
     public function fetch($id)
     {
-        $req = $this->get('customers/' . $id, $this->apiKey);
+        $req = $this->request->get('customers/' . $id, $this->apiKey);
 
         return $req;
     }
@@ -51,7 +52,7 @@ class Customer extends Request
      */
     public function delete($id)
     {
-        $req = $this->delete('customers/' . $id, $this->apiKey);
+        $req = $this->request->delete('customers/' . $id, $this->apiKey);
 
         return $req;
     }
@@ -63,7 +64,7 @@ class Customer extends Request
      */
     public function all($options = null)
     {
-        $req = $this->get('customers', $this->apiKey, $options);
+        $req = $this->request->get('customers', $this->apiKey, $options);
 
         return $req;
     }
