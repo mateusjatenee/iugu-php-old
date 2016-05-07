@@ -10,6 +10,9 @@ class SubAccount
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**

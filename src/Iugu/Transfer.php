@@ -10,6 +10,9 @@ class Transfer
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**

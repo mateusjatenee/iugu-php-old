@@ -10,6 +10,9 @@ class Subscription
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**
@@ -21,6 +24,10 @@ class Subscription
         $this->request = new Request;
     }
 
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function create(array $data)
     {
         $req = $this->request->post('subscriptions', $data, $this->apiKey);

@@ -10,6 +10,9 @@ class Customer
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**

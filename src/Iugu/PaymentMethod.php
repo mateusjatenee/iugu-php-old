@@ -10,6 +10,9 @@ class PaymentMethod
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**

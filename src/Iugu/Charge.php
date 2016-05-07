@@ -10,6 +10,9 @@ class Charge
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**

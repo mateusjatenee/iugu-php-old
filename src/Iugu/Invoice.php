@@ -10,6 +10,9 @@ class Invoice
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**
@@ -21,6 +24,10 @@ class Invoice
         $this->request = new Request;
     }
 
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function create(array $data)
     {
         $req = $this->request->post('invoices', $data, $this->apiKey);

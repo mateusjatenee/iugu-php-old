@@ -6,7 +6,13 @@ use Mateusjatenee\Iugu\Util\Request;
 
 class Token
 {
+    /**
+     * @var mixed
+     */
     private $apiKey;
+    /**
+     * @var mixed
+     */
     private $request;
 
     /**
