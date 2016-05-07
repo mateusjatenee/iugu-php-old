@@ -22,7 +22,7 @@ class Invoice extends Request
 
     public function create(array $data)
     {
-        $req = $this->postRequest('invoices', $data, $this->apiKey);
+        $req = $this->post('invoices', $data, $this->apiKey);
 
         return $req;
     }

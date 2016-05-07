@@ -27,7 +27,7 @@ class Transfer extends Request
      */
     public function create(array $data)
     {
-        $req = $this->postRequest('transfers', $data, $this->apiKey);
+        $req = $this->post('transfers', $data, $this->apiKey);
 
         return $req;
     }
@@ -37,7 +37,7 @@ class Transfer extends Request
      */
     public function all()
     {
-        $req = $this->getRequest('transfers', $this->apiKey);
+        $req = $this->get('transfers', $this->apiKey);
 
         return $req;
     }

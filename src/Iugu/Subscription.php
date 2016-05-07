@@ -22,7 +22,7 @@ class Subscription extends Request
 
     public function create(array $data)
     {
-        $req = $this->postRequest('subscriptions', $data, $this->apiKey);
+        $req = $this->post('subscriptions', $data, $this->apiKey);
 
         return $req;
     }

@@ -27,7 +27,7 @@ class SubAccount extends Request
      */
     public function create($data)
     {
-        $req = $this->postRequest('marketplace/create_account', $data, $this->apiKey);
+        $req = $this->post('marketplace/create_account', $data, $this->apiKey);
 
         return $req;
     }

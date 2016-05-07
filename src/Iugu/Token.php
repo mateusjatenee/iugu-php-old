@@ -22,7 +22,7 @@ class Token extends Request
      */
     public function create(array $data)
     {
-        // $req = $this->postRequest('payment_token', $data);
+        // $req = $this->post('payment_token', $data);
         // return $req;
         $fields = http_build_query($data);
 
