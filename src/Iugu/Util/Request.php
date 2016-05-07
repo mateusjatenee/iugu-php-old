@@ -41,7 +41,7 @@ class Request implements RequestInterface
     public function put($url, $data, $apiKey)
     {
         $options = [
-            'auth' => [$apikey, ''],
+            'auth'        => [$apikey, ''],
             'form_params' => $data,
         ];
 
@@ -60,7 +60,7 @@ class Request implements RequestInterface
     public function post($url, $data, $apiKey)
     {
         $options = [
-            'auth' => [$apiKey, ''],
+            'auth'        => [$apiKey, ''],
             'form_params' => $data,
         ];
 
