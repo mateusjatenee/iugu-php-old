@@ -21,7 +21,7 @@ class Customer
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->request = new Request;
+        $this->request = new Request();
     }
 
     /**
@@ -43,7 +43,7 @@ class Customer
      */
     public function fetch($id)
     {
-        $req = $this->request->get('customers/' . $id, $this->apiKey);
+        $req = $this->request->get('customers/'.$id, $this->apiKey);
 
         return $req;
     }
@@ -55,7 +55,7 @@ class Customer
      */
     public function delete($id)
     {
-        $req = $this->request->delete('customers/' . $id, $this->apiKey);
+        $req = $this->request->delete('customers/'.$id, $this->apiKey);
 
         return $req;
     }
