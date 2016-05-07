@@ -4,15 +4,24 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Token extends Request
+class Token
 {
+    /**
+     * @var mixed
+     */
+    private $apiKey;
+    /**
+     * @var mixed
+     */
+    private $request;
+
     /**
      * @param $apiKey
      */
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     /**
@@ -22,7 +31,7 @@ class Token extends Request
      */
     public function create(array $data)
     {
-        // $req = $this->postRequest('payment_token', $data);
+        // $req = $this->post('payment_token', $data);
         // return $req;
         $fields = http_build_query($data);
 

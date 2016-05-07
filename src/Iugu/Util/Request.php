@@ -19,7 +19,7 @@ class Request implements RequestInterface
      *
      * @return stdClass
      */
-    public function getRequest($url, $apiKey, $options = null)
+    public function get($url, $apiKey, $options = null)
     {
         $options = [
             'auth' => [$apiKey, ''],
@@ -38,10 +38,10 @@ class Request implements RequestInterface
      *
      * @return stdClass
      */
-    public function putRequest($url, $data, $apiKey)
+    public function put($url, $data, $apiKey)
     {
         $options = [
-            'auth'        => [$apikey, ''],
+            'auth' => [$apikey, ''],
             'form_params' => $data,
         ];
 
@@ -57,10 +57,10 @@ class Request implements RequestInterface
      *
      * @return stdClass
      */
-    public function postRequest($url, $data, $apiKey)
+    public function post($url, $data, $apiKey)
     {
         $options = [
-            'auth'        => [$apiKey, ''],
+            'auth' => [$apiKey, ''],
             'form_params' => $data,
         ];
 
@@ -75,7 +75,7 @@ class Request implements RequestInterface
      *
      * @return stdClass
      */
-    public function deleteRequest($url, $apiKey)
+    public function delete($url, $apiKey)
     {
         $options = [
             'auth' => [$apiKey, ''],

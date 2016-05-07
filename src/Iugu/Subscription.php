@@ -4,12 +4,16 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class Subscription extends Request
+class Subscription
 {
     /**
      * @var string
      */
     private $apiKey;
+    /**
+     * @var mixed
+     */
+    private $request;
 
     /**
      * @param $apiKey
@@ -17,12 +21,16 @@ class Subscription extends Request
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
+    /**
+     * @param array $data
+     * @return mixed
+     */
     public function create(array $data)
     {
-        $req = $this->postRequest('subscriptions', $data, $this->apiKey);
+        $req = $this->request->post('subscriptions', $data, $this->apiKey);
 
         return $req;
     }

@@ -4,14 +4,24 @@ namespace Mateusjatenee\Iugu;
 
 use Mateusjatenee\Iugu\Util\Request;
 
-class MarketPlace extends Request
+class MarketPlace
 {
+    /**
+     * @var mixed
+     */
     private $apiKey;
+    /**
+     * @var mixed
+     */
+    private $request;
 
+    /**
+     * @param $apiKey
+     */
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        parent::__construct();
+        $this->request = new Request;
     }
 
     public function subAccount()
