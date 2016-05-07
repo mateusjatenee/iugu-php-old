@@ -27,7 +27,7 @@ class Customer extends Request
      */
     public function create(array $data)
     {
-        $req = $this->postRequest('customers', $data, $this->apiKey);
+        $req = $this->post('customers', $data, $this->apiKey);
 
         return $req;
     }
@@ -39,7 +39,7 @@ class Customer extends Request
      */
     public function fetch($id)
     {
-        $req = $this->getRequest('customers/'.$id, $this->apiKey);
+        $req = $this->get('customers/' . $id, $this->apiKey);
 
         return $req;
     }
@@ -51,7 +51,7 @@ class Customer extends Request
      */
     public function delete($id)
     {
-        $req = $this->deleteRequest('customers/'.$id, $this->apiKey);
+        $req = $this->delete('customers/' . $id, $this->apiKey);
 
         return $req;
     }
@@ -63,7 +63,7 @@ class Customer extends Request
      */
     public function all($options = null)
     {
-        $req = $this->getRequest('customers', $this->apiKey, $options);
+        $req = $this->get('customers', $this->apiKey, $options);
 
         return $req;
     }

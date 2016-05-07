@@ -27,7 +27,7 @@ class Charge extends Request
      */
     public function create($data)
     {
-        $req = $this->postRequest('charge', $data, $this->apiKey);
+        $req = $this->post('charge', $data, $this->apiKey);
 
         return $req;
     }
