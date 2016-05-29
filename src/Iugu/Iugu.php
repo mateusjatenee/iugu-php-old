@@ -21,6 +21,8 @@ class Iugu
     {
         if (method_exists($this, $method)) {
             return call_user_func([$this, $method]);
+        } else {
+            throw new \Exception("Method $method does not exist");
         }
     }
 

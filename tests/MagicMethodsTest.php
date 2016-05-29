@@ -24,4 +24,11 @@ class MagicMethodsTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Customer::class, $this->iugu->customer);
     }
 
+    /** @test */
+    public function client_should_return_an_exception()
+    {
+        $this->setExpectedException(\Exception::class);
+        $this->assertNotInstanceOf(Customer::class, $this->iugu->client);
+    }
+
 }
