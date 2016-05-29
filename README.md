@@ -50,6 +50,21 @@ $token = $iugu->token()->create([
     ],
 ]);
 
+// Ou  
+
+$token = $iugu->token->create([
+    'account_id' => 'ID da sua conta aqui',
+    'method' => 'credit_card',
+    'data' => [
+        'number' => '4111111111111111',
+        'verification_value' => '123',
+        'first_name' => 'Joao',
+        'last_name' => 'Silva',
+        'month' => '12',
+        'year' => '2016',
+    ],
+]);
+
 // Para gerar uma cobranca 
 
 // Aqui você pode pegar um token pelo Iugu.js ou gerar um
