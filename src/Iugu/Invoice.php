@@ -21,11 +21,12 @@ class Invoice
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->request = new Request;
+        $this->request = new Request();
     }
 
     /**
      * @param array $data
+     *
      * @return mixed
      */
     public function create(array $data)
