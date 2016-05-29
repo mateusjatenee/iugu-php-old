@@ -6,7 +6,6 @@ use Mateusjatenee\Iugu\Iugu;
 
 class MagicMethodsTest extends PHPUnit_Framework_TestCase
 {
-
     public function setUp()
     {
         $this->iugu = new Iugu('foo');
@@ -30,5 +29,4 @@ class MagicMethodsTest extends PHPUnit_Framework_TestCase
         $this->setExpectedException(\Exception::class, 'Method client does not exist');
         $this->assertNotInstanceOf(Customer::class, $this->iugu->client);
     }
-
 }

@@ -21,7 +21,7 @@ class PaymentMethod
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->request = new Request;
+        $this->request = new Request();
     }
 
     /**
@@ -31,7 +31,7 @@ class PaymentMethod
      */
     public function all($id)
     {
-        $req = $this->request->get('customers/' . $id . '/payment_methods');
+        $req = $this->request->get('customers/'.$id.'/payment_methods');
 
         return $req;
     }
@@ -44,7 +44,7 @@ class PaymentMethod
      */
     public function create($id, array $data)
     {
-        $req = $this->request->post('customers/' . $id . '/payment_methods', $data, $this->apiKey);
+        $req = $this->request->post('customers/'.$id.'/payment_methods', $data, $this->apiKey);
 
         return $req;
     }
@@ -57,7 +57,7 @@ class PaymentMethod
      */
     public function fetch($userId, $paymentId)
     {
-        $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
+        $url = 'customers/'.$userId.'/payment_methods/'.$paymentId;
         $req = $this->request->get($url, $this->apiKey);
 
         return $req;
@@ -71,7 +71,7 @@ class PaymentMethod
      */
     public function delete($userId, $paymentId)
     {
-        $url = 'customers/' . $userId . '/payment_methods/' . $paymentId;
+        $url = 'customers/'.$userId.'/payment_methods/'.$paymentId;
         $req = $this->request->delete($url, $this->apiKey);
 
         return $req;

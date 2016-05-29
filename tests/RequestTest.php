@@ -1,11 +1,10 @@
 <?php
 
-use Mateusjatenee\Iugu\Util\Request;
 use \Mockery as M;
+use Mateusjatenee\Iugu\Util\Request;
 
 class RequestTest extends PHPUnit_Framework_TestCase
 {
-
     public function setUp()
     {
         $this->mock = M::mock(Request::class);

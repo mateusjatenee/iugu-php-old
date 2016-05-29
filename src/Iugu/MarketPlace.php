@@ -21,7 +21,7 @@ class MarketPlace
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->request = new Request;
+        $this->request = new Request();
     }
 
     public function subAccount()
