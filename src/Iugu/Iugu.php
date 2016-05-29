@@ -17,6 +17,13 @@ class Iugu
         $this->apiKey = $apiKey;
     }
 
+    public function __get($method)
+    {
+        if (method_exists($this, $method)) {
+            return call_user_func([$this, $method]);
+        }
+    }
+
     /**
      * Retorna uma instância da classe Token.
      *
