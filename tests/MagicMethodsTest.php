@@ -27,7 +27,7 @@ class MagicMethodsTest extends PHPUnit_Framework_TestCase
     /** @test */
     public function client_should_return_an_exception()
     {
-        $this->setExpectedException(\Exception::class);
+        $this->setExpectedException(\Exception::class, 'Method client does not exist');
         $this->assertNotInstanceOf(Customer::class, $this->iugu->client);
     }
 
